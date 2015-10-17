@@ -56,6 +56,8 @@ H5P.InteractiveVideoInteraction = (function ($, EventDispatcher) {
      */
     var createButton = function () {
       var hiddenClass = isShownAsButton ? '' : ' h5p-hidden';
+	  if (!self.dialogDisabled && library !== 'H5P.Nil') {
+                openDialog();
       $interaction = $('<div/>', {
         tabIndex: 0,
         role: 'button',
